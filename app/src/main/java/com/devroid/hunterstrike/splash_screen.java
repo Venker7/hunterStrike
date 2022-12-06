@@ -27,7 +27,7 @@ public class splash_screen extends AppCompatActivity {
                 }
                 else
                 {
-                    Intent intent = new Intent(splash_screen.this,MainActivity.class);
+                    Intent intent = new Intent(splash_screen.this,loginPage.class);
                     startActivity(intent);
                     finish();
                 }

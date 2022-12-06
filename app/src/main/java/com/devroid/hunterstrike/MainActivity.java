@@ -95,7 +95,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 dialog.dismiss();
-                Toast.makeText(MainActivity.this,"Reciever is Clicked",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this,Reciever.class);
+                startActivity(intent);
 
             }
         });

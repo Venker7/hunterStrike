@@ -38,25 +38,29 @@ public class loginPage extends AppCompatActivity {
                 }
                 else
                 {
-                    if(Password.isEmpty())
+                    flag1 = Correct_Email.compareTo(Email);
+                    if(flag1!=0)
                     {
-                        Toast.makeText(loginPage.this,"Please enter your password",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(loginPage.this,"Please Enter valid email ",Toast.LENGTH_SHORT).show();
                     }
+
                     else{
-                        if(Password.length() < 8)
+                        if(Password.isEmpty())
                         {
-                            Toast.makeText(loginPage.this,"Your password length should be at least 8 character",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(loginPage.this,"Please enter your password",Toast.LENGTH_SHORT).show();
                         }
+
                         else
                         {
-                            flag1 = Correct_Email.compareTo(Email);
-                            flag2 = Correct_password.compareTo(Password);
-                            if(flag1!=0)
+
+                            if(Password.length() < 8)
                             {
-                                Toast.makeText(loginPage.this,"Please Enter valid email ",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(loginPage.this,"Your password length should be at least 8 character",Toast.LENGTH_SHORT).show();
                             }
+
                             else
                             {
+                                flag2 = Correct_password.compareTo(Password);
                                 if(flag2!=0)
                                 {
                                     Toast.makeText(loginPage.this,"Your password is incorrect",Toast.LENGTH_SHORT).show();

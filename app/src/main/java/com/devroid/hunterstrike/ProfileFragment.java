@@ -35,6 +35,23 @@ Activity context;
                startActivity(intent);
            }
        });
+
+       LinearLayout eligibility = view.findViewById(R.id.eligibility_layout);
+       eligibility.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(context,Eligibility.class);
+               startActivity(intent);
+           }
+       });
+        LinearLayout bloodfact = view.findViewById(R.id.blood_facts_layout);
+        bloodfact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,Blood_Facts.class);
+                startActivity(intent);
+            }
+        });
         return  view;
     }
 

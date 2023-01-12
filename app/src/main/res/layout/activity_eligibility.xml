@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Eligibility">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@color/teal_200">
+        <TextView
+            android:layout_width="280dp"
+            android:id="@+id/text1"
+            android:text="A Drop of water makes ocean. A Unit of Blood Saves live"
+            android:layout_marginTop="25dp"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"/>
+
+
+    </RelativeLayout>
+
+</ScrollView>

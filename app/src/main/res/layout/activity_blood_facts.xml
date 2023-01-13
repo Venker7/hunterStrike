@@ -34,15 +34,15 @@
             android:textColor="@color/black"
             android:textSize="20dp"
             android:gravity="center"
+            android:padding="20dp"
             android:layout_height="wrap_content"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="* There is no substitute for human Blood.\n
-* Blood makes up about 7% of your body's weight.\n An average adult has about 14 to 18 pints of Blood.
+            android:padding="20dp"
+            android:text="* There is no substitute for human Blood.
+\n* Blood makes up about 7% of your body's weight.\n An average adult has about 14 to 18 pints of Blood.
 \n* One standard unit or pint of Blood equals about two cups.
 \n* Blood carries oxygen and nutrients to all of the body.
 \n* Blood carries carbon dioxide and other waste products back to the lungs, kidneys and liver for disposal.
@@ -64,7 +64,8 @@
 \n* Human Blood; red Blood cells, white Blood cells, plasma and platelets are made naturally by the body in the bone marrow."
             android:layout_below="@+id/text2"
             android:textColor="@color/teal_200"
-            android:textSize="18dp"/>
+            android:textSize="16dp"/>
     </RelativeLayout>
+
 
 </ScrollView>

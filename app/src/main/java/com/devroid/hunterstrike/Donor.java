@@ -30,13 +30,6 @@ ArrayAdapter<String> adapterTypes;
             }
         });
 
-        ImageView arrow = findViewById(R.id.arrow_back);
-        arrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Donor.this,MainActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 }

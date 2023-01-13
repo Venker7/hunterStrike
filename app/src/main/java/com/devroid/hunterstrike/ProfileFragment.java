@@ -44,6 +44,14 @@ Activity context;
                startActivity(intent);
            }
        });
+        LinearLayout compatibility = view.findViewById(R.id.compatibility_layout);
+        compatibility.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,Compatibility.class);
+                startActivity(intent);
+            }
+        });
         LinearLayout bloodfact = view.findViewById(R.id.blood_facts_layout);
         bloodfact.setOnClickListener(new View.OnClickListener() {
             @Override

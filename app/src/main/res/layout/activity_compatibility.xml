@@ -8,7 +8,11 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="110dp"
+        android:id="@+id/compatibility_bar"
         android:background="@color/teal_200">
         <TextView
             android:layout_width="match_parent"
@@ -23,5 +27,319 @@
 
 
     </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/text3"
+            android:layout_below="@+id/compatibility_bar"
+            android:text="Red Blood Cell compatibility table"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:layout_below="@+id/text3"
+            android:id="@+id/table_layout1">
 
+<TableRow>
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Recipient blood type"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        />
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Donor red blood cells  must be"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+</TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="O-"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:background="#D9D8D8"
+                    />
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="O-"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="O+"
+                    android:textColor="@color/black" android:gravity="center"
+                    android:textSize="15dp"
+                    android:background="#D9D8D8"
+                    />
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="O- , O+"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="A-"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:gravity="center"
+                    android:background="#D9D8D8"
+                    />
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="O- ,  A-"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="A+"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:background="#D9D8D8"
+                    />
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="O- , O+ , A- , A+"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:background="#D9D8D8"
+                    android:text="B-"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="O- , B-"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="B+"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:gravity="center"
+                    android:background="#D9D8D8"
+                    />
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="O- , O+ , B- , B+"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="AB-"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:background="#D9D8D8"
+                    />
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="O- , A- , b- , AB-"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="AB+"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:gravity="center"
+                    android:background="#D9D8D8"
+                    />
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="O- , O+ , A- , A+ , B- , B+ , AB- , AB+"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+            </TableRow>
+
+
+
+        </TableLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text2"
+            android:paddingTop="20dp"
+            android:textSize="18dp"
+            android:text="Plasma compatibility Table"
+            android:textColor="@color/black"
+            android:gravity="center_horizontal"
+            android:layout_below="@id/table_layout1"/>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:layout_below="@id/text2">
+            <TableRow>
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Recipient blood type"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="Donor's plasma must be"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="AB"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:background="#D9D8D8"
+                    />
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="AB"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="A"
+                    android:textColor="@color/black" android:gravity="center"
+                    android:textSize="15dp"
+                    android:background="#D9D8D8"
+                    />
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="A  or  AB"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="B"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:gravity="center"
+                    android:background="#D9D8D8"
+                    />
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="B  or  AB"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="O"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:gravity="center"
+                    android:background="#D9D8D8"
+                    />
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="O , A , B or AB"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+            </TableRow>
+
+
+        </TableLayout>
+
+    </RelativeLayout>
 </ScrollView>

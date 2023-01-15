@@ -15,7 +15,6 @@ import android.widget.RelativeLayout;
 
 
 public class ProfileFragment extends Fragment {
-    public static String PREFS_NAME="MyPrefsFile";
 Activity context;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

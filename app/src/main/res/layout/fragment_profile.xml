@@ -50,98 +50,104 @@ android:layout_marginStart="30dp"
     <RelativeLayout
         android:layout_width="350dp"
         android:layout_height="370dp"
-       android:layout_centerHorizontal="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="190dp"
         android:background="@drawable/background">
+
         <RelativeLayout
+            android:id="@+id/eligibility_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:layout_marginTop="120dp"
-            android:id="@+id/eligibility_layout"
             android:clickable="true"
             android:focusable="true"
-            android:onClick="onButtonClick">
+            android:onClick="onButtonClick"
+            android:padding="10dp">
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Eligibility"
-                android:textStyle="italic"
-                android:textColor="@color/black"
                 android:layout_marginStart="20dp"
-                android:textSize="20dp"/>
+                android:text="Eligibility"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="italic" />
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/arrow_forward"
-                android:layout_marginStart="170dp"
-                android:layout_marginTop="3dp"/>
+                android:layout_marginStart="270dp"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/arrow_forward" />
 
         </RelativeLayout>
+
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="300dp"
-            android:layout_below="@id/eligibility_layout"
-            android:background="@color/black"
-            android:layout_centerHorizontal="true"
             android:id="@+id/gap_layout1"
-            android:layout_height="1dp"/>
+            android:layout_width="300dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/eligibility_layout"
+            android:layout_centerHorizontal="true"
+            android:background="@color/black" />
+
         <LinearLayout
+            android:id="@+id/compatibility_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:id="@+id/compatibility_layout"
             android:layout_below="@id/gap_layout1"
-            >
+            android:padding="10dp">
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Compatibility"
-                android:textStyle="italic"
-                android:textColor="@color/black"
                 android:layout_marginStart="20dp"
-                android:textSize="20dp"/>
+                android:text="Compatibility"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="italic" />
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/arrow_forward"
                 android:layout_marginStart="133dp"
-                android:layout_marginTop="3dp"/>
+                android:layout_marginTop="3dp"
+                android:src="@drawable/arrow_forward" />
 
 
         </LinearLayout>
+
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="300dp"
-            android:layout_below="@id/compatibility_layout"
-            android:background="@color/black"
-            android:layout_centerHorizontal="true"
             android:id="@+id/gap_layout2"
-            android:layout_height="1dp"/>
+            android:layout_width="300dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/compatibility_layout"
+            android:layout_centerHorizontal="true"
+            android:background="@color/black" />
 
         <LinearLayout
+            android:id="@+id/logout_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="260dp"
-            android:padding="10dp"
-            android:id="@+id/logout_layout">
+            android:padding="10dp">
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/logout"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="3dp"/>
+                android:layout_marginTop="3dp"
+                android:src="@drawable/logout" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:text="Logout"
-                android:textStyle="italic"
                 android:textColor="@color/black"
-                android:layout_marginStart="50dp"
-                android:textSize="20dp"/>
+                android:textSize="20dp"
+                android:textStyle="italic" />
 
         </LinearLayout>
 

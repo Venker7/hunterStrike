@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.donor:
                     replaceFragment(new DonorFragment());
                     break;
-                case R.id.reciever:
+                case R.id.receiver:
                     replaceFragment(new RecieverFragment());
                     break;
                 case R.id.profile:

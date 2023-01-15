@@ -31,8 +31,7 @@ Button edit;
        logout.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               Intent intent = new Intent(context,loginPage.class);
-               editor.putBoolean("hasLoggedIn",false);
+               Intent intent = new Intent(context,loginPage.class);editor.putBoolean("hasLoggedIn",false);
                editor.commit();
                startActivity(intent);
            }

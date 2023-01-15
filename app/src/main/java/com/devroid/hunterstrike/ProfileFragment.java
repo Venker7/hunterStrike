@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -17,6 +18,7 @@ import android.widget.RelativeLayout;
 public class ProfileFragment extends Fragment {
     public static String PREFS_NAME="MyPrefsFile";
 Activity context;
+Button edit;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -57,6 +59,14 @@ Activity context;
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context,Blood_Facts.class);
+                startActivity(intent);
+            }
+        });
+        edit = view.findViewById(R.id.edit_profile);
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,EditProfile.class);
                 startActivity(intent);
             }
         });

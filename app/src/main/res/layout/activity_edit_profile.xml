@@ -25,10 +25,13 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/profile_picture"
         android:background="@drawable/circle">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/person"/>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+
+            android:background="@drawable/person"
+            android:scaleType="centerCrop"/>
 
     </LinearLayout>
     <LinearLayout

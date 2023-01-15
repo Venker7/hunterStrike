@@ -9,8 +9,8 @@
         android:id="@+id/donor"
         android:icon="@drawable/minus"/>
     <item
-        android:title="Reciever"
-        android:id="@+id/reciever"
+        android:title="Receiver"
+        android:id="@+id/receiver"
         android:icon="@drawable/add"/>
     <item
         android:title="Profile"

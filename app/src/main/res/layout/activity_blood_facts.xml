@@ -79,7 +79,6 @@
 \n\u2023 Type AB plasma has been considered as the universal Blood plasma type, and therefore AB plasma is given to patients with any Blood type.
 \n\u2023 Frozen Plasma can be stored for up to one year.
 \n\u2023 Human Blood; red Blood cells, white Blood cells, plasma and platelets are made naturally by the body in the bone marrow."
-            android:layout_below="@+id/text2"
             android:textColor="@color/teal_200"
             android:textSize="16dp"/>
     </RelativeLayout>

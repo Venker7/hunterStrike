@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.android.volley.toolbox.StringRequest;
 import com.devroid.hunterstrike.ModelResponse.registerResponse;
 import com.google.android.material.textfield.TextInputEditText;
 

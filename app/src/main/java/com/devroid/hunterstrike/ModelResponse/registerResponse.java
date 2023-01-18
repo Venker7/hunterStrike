@@ -1,6 +1,5 @@
 package com.devroid.hunterstrike.ModelResponse;
 
-import com.google.gson.annotations.SerializedName;
 
 public class registerResponse {
     String error;

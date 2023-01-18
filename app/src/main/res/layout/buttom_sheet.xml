@@ -84,5 +84,31 @@
             android:layout_marginBottom="2dp"
             android:layout_marginStart="5dp"/>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:id="@+id/event_layout">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/event"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event"
+            android:textColor="@color/black"
+            android:layout_marginStart="10dp"
+            android:textSize="25dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="(If you want to post an event for blood)"
+            android:textSize="15dp"
+            android:layout_marginStart="5dp"/>
+    </LinearLayout>
 
 </LinearLayout>

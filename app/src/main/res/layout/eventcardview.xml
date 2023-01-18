@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/donor_card_view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="15dp"
+    app:cardCornerRadius="15dp"
+    android:layout_margin="16dp"
+    >
+    <RelativeLayout
+        android:layout_width="380dp"
+        android:layout_height="150dp"
+        android:background="#DB1313">
+
+        <TextView
+            android:layout_marginTop="25dp"
+            android:layout_width="50dp"
+            android:text="Topic: "
+            android:textColor="@color/white"
+            android:textSize="17dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="25dp"/>
+
+        <TextView
+            android:id="@+id/topic"
+            android:layout_width="300dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="25dp"
+            android:textStyle="italic"
+            android:text="Blood Donation Camp"
+            android:textColor="@color/white"
+            android:textSize="17dp"
+            android:layout_marginStart="65dp"/>
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="60dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="17dp"
+            android:textColor="@color/white"
+            android:text="A blood donation camp will be held at Manipur Technical University around 10 am"
+            android:textStyle="italic"
+            />
+
+
+    </RelativeLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
+

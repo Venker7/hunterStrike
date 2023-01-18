@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/donor_card_view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="15dp"
+    app:cardCornerRadius="15dp"
+    android:layout_margin="16dp"
+    >
+    <RelativeLayout
+        android:layout_width="380dp"
+        android:layout_height="150dp"
+        android:background="#DB1313">
+
+        <TextView
+            android:layout_marginTop="25dp"
+            android:layout_width="50dp"
+            android:text="Name: "
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="20dp"/>
+        <TextView
+            android:id="@+id/donor_name"
+            android:layout_marginTop="25dp"
+            android:layout_width="250dp"
+            android:text="Nongmaithem Venker Singh"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:layout_marginStart="70dp"
+            android:layout_height="20dp"/>
+        <TextView
+            android:layout_marginTop="50dp"
+            android:layout_width="100dp"
+            android:text="Blood Group: "
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="20dp"/>
+        <TextView
+            android:layout_marginTop="50dp"
+            android:layout_width="50dp"
+            android:id="@+id/donor_blood_group"
+            android:text="B+"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:layout_marginStart="100dp"
+            android:layout_height="20dp"/>
+
+        <TextView
+            android:layout_marginTop="75dp"
+            android:layout_width="120dp"
+            android:text="Phone Number:"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="20dp"/>
+        <TextView
+            android:layout_marginTop="75dp"
+            android:id="@+id/donor_phone_no"
+            android:layout_width="100dp"
+            android:text="8257994312"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:layout_marginStart="130dp"
+            android:layout_height="20dp"/>
+
+        <TextView
+            android:layout_marginTop="100dp"
+            android:layout_width="70dp"
+            android:text="Address:"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="20dp"/>
+        <TextView
+            android:id="@+id/donor_address"
+            android:layout_marginTop="100dp"
+            android:layout_width="280dp"
+            android:text="Kakching Turel Wangma Mantop Pareng"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:layout_marginStart="90dp"
+            android:layout_height="40dp"/>
+
+
+
+    </RelativeLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
+

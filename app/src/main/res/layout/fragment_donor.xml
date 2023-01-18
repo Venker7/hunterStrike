@@ -25,7 +25,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/donRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            tools:listitem="@layout/donor_card_view"/>
 
     </ScrollView>
     </LinearLayout>

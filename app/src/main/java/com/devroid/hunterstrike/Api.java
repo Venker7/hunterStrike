@@ -12,11 +12,11 @@ public interface Api {
     @FormUrlEncoded
     @POST("/home/register")
     Call<registerResponse> register(
-        @Field("name")  String name,
-        @Field("email")  String email,
-        @Field("number")  Integer number,
-        @Field("password")  String password,
-        @Field("confirmpassword")  String confirmpassword
+            @Field("name")  String name,
+            @Field("email")  String email,
+            @Field("number")  Integer number,
+            @Field("password")  String password,
+            @Field("confirmpassword")  String confirmpassword
 
     );
     @FormUrlEncoded

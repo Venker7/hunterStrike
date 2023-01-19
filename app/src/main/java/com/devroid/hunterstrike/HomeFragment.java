@@ -26,20 +26,23 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        Toolbar toolbar = view.findViewById(R.id.home_bar);
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+
         return view;
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
     }
 
     @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        inflater.inflate(R.menu.home_menu,menu);
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.home_menu, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
     @Override
@@ -56,6 +59,7 @@ public class HomeFragment extends Fragment {
                 break;
 
             case R.id.feedback:
+                Toast.makeText(getActivity(), "You have press feedback", Toast.LENGTH_SHORT).show();
                 break;
 
             default:

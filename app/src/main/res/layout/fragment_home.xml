@@ -16,6 +16,7 @@
             android:background="#F60909"
             android:textAlignment="center"
             app:title="Home"
+            android:id="@+id/home_bar"
             app:menu="@menu/home_menu"
             app:titleTextColor="@color/white"
             app:titleMarginStart="50dp"/>

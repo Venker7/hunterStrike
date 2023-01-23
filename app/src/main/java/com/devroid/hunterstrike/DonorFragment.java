@@ -1,64 +1,55 @@
 package com.devroid.hunterstrike;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link DonorFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class DonorFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public DonorFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DonorFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static DonorFragment newInstance(String param1, String param2) {
-        DonorFragment fragment = new DonorFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
+String sBaseUrl = "https://api.instantwebtools.net/v1/";
+   RecyclerView recyclerView;
+   Activity context;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_donor, container, false);
+        context = getActivity();
+        View view = inflater.inflate(R.layout.fragment_donor, container, false);
+        recyclerView = view.findViewById(R.id.donRecyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+
+        Bundle bundle = getArguments();
+
+        if (bundle != null) {
+            String donor_name = bundle.getString("name");
+            String donor_blood_type = bundle.getString("blood_type");
+            String donor_contact = bundle.getString("contact");
+            String donor_address = bundle.getString("address");
+            // Find the TextViews in the CardView
+            TextView DonorName = view.findViewById(R.id.donor_name);
+            TextView DonorType = view.findViewById(R.id.donor_blood_group);
+            TextView DonorContact = view.findViewById(R.id.donor_phone_no);
+            TextView DonorAddress = view.findViewById(R.id.donor_address);
+            // Set the data to the TextViews
+            DonorName.setText(donor_name);
+            DonorType.setText(donor_blood_type);
+            DonorContact.setText(donor_contact);
+            DonorAddress.setText(donor_address);
+
+        }
+
+            return view;
+
+
     }
 }

@@ -1,6 +1,9 @@
 package com.devroid.hunterstrike;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -70,12 +73,28 @@ EditText Donor_name,Donor_contact,Donor_address,Donor_message;
                                 return;
                             }
                             else {
+                                FragmentManager fragmentManager = getSupportFragmentManager();
+                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                                Bundle bundle = new Bundle();
+
+                                bundle.putString("name",donor_name);
+                                bundle.putString("name",type2);
+                                bundle.putString("name",Donor_address.getText().toString());
+                                bundle.putString("name",Donor_contact.getText().toString());
+                                bundle.putString("name",Donor_message.getText().toString());
+                                DonorFragment donorFragment = new DonorFragment();
+                                donorFragment.setArguments(bundle);
+
+
+                            }
+
+
 
                             }
 
                         }
                     }
-                }
+
             }
         });
 

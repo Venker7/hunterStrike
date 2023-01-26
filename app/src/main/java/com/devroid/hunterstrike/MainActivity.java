@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,7 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-
+import androidx.appcompat.widget.Toolbar;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -32,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Toolbar toolbar = findViewById(R.id.home_bar);
+        setSupportActionBar(toolbar);
         binding=ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         binding.bottomNavigationView.setBackground(null);
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
         LinearLayout donor = dialog.findViewById(R.id.donor_layout);
         LinearLayout shortsLayout = dialog.findViewById(R.id.reciever_layout);
+        LinearLayout event = dialog.findViewById(R.id.event_layout);
 
         ImageView cancelButton = dialog.findViewById(R.id.close);
 
@@ -99,6 +102,16 @@ public class MainActivity extends AppCompatActivity {
 
                 dialog.dismiss();
                 Intent intent = new Intent(MainActivity.this,Reciever.class);
+                startActivity(intent);
+
+            }
+        });
+
+        event.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                Intent intent = new Intent(MainActivity.this,EventPost.class);
                 startActivity(intent);
 
             }

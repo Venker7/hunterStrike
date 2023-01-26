@@ -12,10 +12,14 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">#DB0C0C</item>
         <!-- Customize your theme here. -->
+        <item name="actionOverflowButtonStyle">@style/IconOverflow</item>
     </style>
     <style name="Theme.HunterStrike.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+    <style name="IconOverflow" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">@android:color/white</item>
     </style>
     <style name="Theme.HunterStrike.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.HunterStrike.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

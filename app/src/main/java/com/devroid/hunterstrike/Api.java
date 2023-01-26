@@ -39,6 +39,5 @@ public interface Api {
             @Field("address") String address,
             @Field("number") String number,
             @Field("message") String message
-
     );
 }

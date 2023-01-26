@@ -52,7 +52,6 @@ public class DonorFragment extends Fragment {
                 if(response.isSuccessful()){
                     donorUserList=response.body().getDonorUserList();
                     recyclerView.setAdapter(new donorAdapter(getActivity(),donorUserList));
-                    Toast.makeText(getActivity(), "success", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     Toast.makeText(getActivity(), response.body().getStatus(), Toast.LENGTH_SHORT).show();

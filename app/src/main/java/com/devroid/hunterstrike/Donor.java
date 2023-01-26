@@ -22,14 +22,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Donor extends AppCompatActivity {
-String[] type1 = {"A+","A-","B+","B-","AB+","AB-","0+","O-"};
-AutoCompleteTextView autoCompleteTextView;
-String type2;
-ArrayAdapter<String> adapterTypes;
+    String[] type1 = {"A+","A-","B+","B-","AB+","AB-","0+","O-"};
+    AutoCompleteTextView autoCompleteTextView;
+    String type2;
+    ArrayAdapter<String> adapterTypes;
 
-TextInputEditText donorName,donorAddress,donorNumber,donorMessage;
-TextInputLayout donorBloodGroup;
-Button postDonor;
+    TextInputEditText donorName,donorAddress,donorNumber,donorMessage;
+    TextInputLayout donorBloodGroup;
+    Button postDonor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +47,7 @@ Button postDonor;
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-               type2 = adapterTypes.getItem(i).toString();
+                type2 = adapterTypes.getItem(i).toString();
 
             }
         });
@@ -70,47 +70,47 @@ Button postDonor;
         String DAddress = donorAddress.getText().toString();
         String DMessage = donorMessage.getText().toString();
 
-       if(DName.isEmpty()){
+        if(DName.isEmpty()){
             donorName.requestFocus();
             donorName.setError("Please enter your name");
             return;
-       }  if(DBloodGroup.isEmpty()){
+        }  if(DBloodGroup.isEmpty()){
             donorBloodGroup.requestFocus();
             donorBloodGroup.setError("Please enter your bloodgroup");
             return;
-       }  if(DNumber.isEmpty()){
+        }  if(DNumber.isEmpty()){
             donorNumber.requestFocus();
             donorNumber.setError("Please enter your number");
             return;
-       }  if(DAddress.isEmpty()){
+        }  if(DAddress.isEmpty()){
             donorAddress.requestFocus();
             donorAddress.setError("Please enter your address");
             return;
-       }  if(DMessage.isEmpty()){
+        }  if(DMessage.isEmpty()){
             donorMessage.requestFocus();
             donorMessage.setError("Please enter your message");
             return;
-       }
+        }
         Call<createDonorResponse> call=retrofitClient
                 .getInstance()
                 .getApi().createdonor(DName,DBloodGroup,DAddress,DNumber,DMessage);
-       call.enqueue(new Callback<createDonorResponse>() {
-           @Override
-           public void onResponse(Call<createDonorResponse> call, Response<createDonorResponse> response) {
-               createDonorResponse createDonorResponse=response.body();
-               if(response.isSuccessful()){
-                   Toast.makeText(Donor.this, createDonorResponse.getSuccess(), Toast.LENGTH_SHORT).show();
-               }
-               else {
-                   Toast.makeText(Donor.this, createDonorResponse.getStatus(), Toast.LENGTH_SHORT).show();
-               }
-           }
+        call.enqueue(new Callback<createDonorResponse>() {
+            @Override
+            public void onResponse(Call<createDonorResponse> call, Response<createDonorResponse> response) {
+                createDonorResponse createDonorResponse=response.body();
+                if(response.isSuccessful()){
+                    Toast.makeText(Donor.this, createDonorResponse.getSuccess(), Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(Donor.this, createDonorResponse.getStatus(), Toast.LENGTH_SHORT).show();
+                }
+            }
 
-           @Override
-           public void onFailure(Call<createDonorResponse> call, Throwable t) {
+            @Override
+            public void onFailure(Call<createDonorResponse> call, Throwable t) {
 
-           }
-       });
+            }
+        });
     }
 
 }

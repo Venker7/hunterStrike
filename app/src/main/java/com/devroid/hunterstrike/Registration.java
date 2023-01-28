@@ -93,7 +93,7 @@ public class Registration extends AppCompatActivity {
                 .getApi().register(userName,userEmail,number,userPassword,userConfirmPassword);
         call.enqueue(new Callback<registerResponse>() {
             @Override
-            public void onResponse(Call<registerResponse> call, Response<registerResponse> response) {
+            public void onResponse(Call<registerResponse>  call, Response<registerResponse> response) {
             registerResponse registerResponse=response.body();
             if(response.isSuccessful()){
                 Intent intent=new Intent( Registration.this,loginPage.class);

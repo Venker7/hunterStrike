@@ -2,6 +2,7 @@ package com.devroid.hunterstrike;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -100,6 +101,7 @@ public class Donor extends AppCompatActivity {
                 createDonorResponse createDonorResponse=response.body();
                 if(response.isSuccessful()){
                     Toast.makeText(Donor.this, createDonorResponse.getSuccess(), Toast.LENGTH_SHORT).show();
+
                 }
                 else {
                     Toast.makeText(Donor.this, createDonorResponse.getStatus(), Toast.LENGTH_SHORT).show();
@@ -108,7 +110,7 @@ public class Donor extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<createDonorResponse> call, Throwable t) {
-
+                Toast.makeText(Donor.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

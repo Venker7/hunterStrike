@@ -26,6 +26,4 @@ public class retrofitClient {
         return retrofit.create(Api.class);
     }
 
-
-
 }

@@ -17,11 +17,19 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 
 
 public class HomeFragment extends Fragment {
 
+    GoogleSignInOptions gso;
+    GoogleSignInClient gsc;
+    TextView name,email;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -87,4 +95,6 @@ public class HomeFragment extends Fragment {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }

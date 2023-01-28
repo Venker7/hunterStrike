@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".loginPage">
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="350dp"
-    android:src="@drawable/world_international_blood_donor_day_concept_poster_design_1017_38752"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:src="@drawable/world_international_blood_donor_day_concept_poster_design_1017_38752" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/email_layout"
@@ -68,19 +69,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="600dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="580dp"
         android:layout_marginBottom="90dp"
         android:text="Don't have an account?"
-        android:textColor="@color/black"
-        />
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="585dp"
+        android:layout_marginTop="566dp"
         android:layout_marginEnd="55dp"
         android:layout_marginBottom="75dp"
         android:backgroundTint="#00F8F3F3"
@@ -89,6 +89,33 @@
         android:text="Create"
         android:textAllCaps="false"
         android:textColor="#039BE5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/other"
+        android:layout_above="@id/socialicons"
+        android:text="or sign in with"
+        android:layout_centerHorizontal="true"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/socialicons"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="20dp"
+            android:id="@+id/google_btn"
+            android:src="@drawable/google_logo"/>
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/facebook_logo"/>
+    </LinearLayout>
 
 
 </RelativeLayout>

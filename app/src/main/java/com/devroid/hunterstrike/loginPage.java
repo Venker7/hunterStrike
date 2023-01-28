@@ -1,5 +1,6 @@
 package com.devroid.hunterstrike;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -9,9 +10,16 @@ import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.devroid.hunterstrike.ModelResponse.loginResponse;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 
 import retrofit2.Call;
@@ -23,6 +31,10 @@ public class loginPage extends AppCompatActivity {
     private Button move1,move2;
     TextInputEditText email,password;
     public static String PREFS_NAME="MyPrefsFile";
+
+    GoogleSignInOptions gso;
+    GoogleSignInClient gsc;
+    ImageView googleBtn;
 
     private Context login;
     @Override
@@ -93,8 +105,44 @@ public class loginPage extends AppCompatActivity {
             }
         });
 
+    googleBtn = findViewById(R.id.google_btn);
+    gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+    gsc = GoogleSignIn.getClient(this,gso);
 
+    googleBtn.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            signIn();
+        }
+    });
 
 
     }
+
+    void signIn(){
+        Intent signInIntent = gsc.getSignInIntent();
+        startActivityForResult(signInIntent,1000);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==1000){
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+
+            try {
+                task.getResult(ApiException.class);
+                navigateToHomeFragment();
+            } catch (ApiException e) {
+                Toast.makeText(getApplicationContext(),"Something went wrong",Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    void navigateToHomeFragment(){
+        finish();
+        Intent intent = new Intent(loginPage.this,HomeFragment.class);
+        startActivity(intent);
+    }
+
 }

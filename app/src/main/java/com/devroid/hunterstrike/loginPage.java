@@ -134,14 +134,14 @@ public class loginPage extends AppCompatActivity {
                 task.getResult(ApiException.class);
                 navigateToHomeFragment();
             } catch (ApiException e) {
-                Toast.makeText(getApplicationContext(),"Something went wrong",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),""+e,Toast.LENGTH_LONG).show();
             }
         }
     }
 
     void navigateToHomeFragment(){
         finish();
-        Intent intent = new Intent(loginPage.this,HomeFragment.class);
+        Intent intent = new Intent(loginPage.this,MainActivity.class);
         startActivity(intent);
     }
 

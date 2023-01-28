@@ -27,9 +27,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 
 public class HomeFragment extends Fragment {
 
-    GoogleSignInOptions gso;
-    GoogleSignInClient gsc;
-    TextView name,email;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -6,7 +6,7 @@ import java.util.List;
 
 public class FetchDonorUserResponse {
 
-    @SerializedName("users ")
+    @SerializedName("users")
     List<DonorUser> users;
     String status;
 

@@ -85,12 +85,13 @@
                 android:textSize="20dp"/>
 
             <TextView
-                android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:textColor="#F9F5F5"
-                android:id="@+id/email_text"
-                android:layout_marginLeft="80dp"
-                android:textSize="10dp"
+                android:id="@+id/email_text_user"
+                android:layout_marginLeft="40dp"
+                android:text="venker7@gmail.com"
+                android:textSize="20dp"
                 android:gravity="center"/>
 
 
@@ -120,12 +121,13 @@
                 android:textSize="20dp"/>
 
             <TextView
-                android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:textColor="#E8E5E5"
-                android:id="@+id/phone_no."
+                android:id="@+id/phone_no_user"
                 android:layout_marginLeft="10dp"
-                android:textSize="10dp"
+                android:text="2649129234"
+                android:textSize="20dp"
                 android:gravity="center"/>
 
 

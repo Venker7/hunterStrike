@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class retrofitClient {
-    private static String BASE_URL="http://192.168.41.37:3000/";
+    private static String BASE_URL="https://blood-donation-3fjl.onrender.com";
     private static  retrofitClient retrofitClient;
     private static Retrofit retrofit;
 

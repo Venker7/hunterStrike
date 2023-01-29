@@ -91,31 +91,22 @@
         android:textColor="#039BE5" />
 
     <TextView
+        android:id="@+id/other"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/other"
-        android:layout_above="@id/socialicons"
-        android:text="or sign in with"
-        android:layout_centerHorizontal="true"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/socialicons"
-        android:layout_alignParentBottom="true"
-        android:gravity="center">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="630dp"
+        android:text="or sign in with" />
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:id="@+id/googleSignIn"
+        android:layout_below="@id/other"
+        android:src="@drawable/google_logo"/>
 
-        <ImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_margin="20dp"
-            android:id="@+id/google_btn"
-            android:src="@drawable/google_logo"/>
-        <ImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_margin="20dp"
-            android:src="@drawable/facebook_logo"/>
-    </LinearLayout>
+
 
 
 </RelativeLayout>

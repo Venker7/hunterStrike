@@ -1,5 +1,6 @@
 package com.devroid.hunterstrike;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,11 +15,16 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.devroid.hunterstrike.ModelResponse.loginResponse;
+import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -27,14 +33,15 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-public class loginPage extends AppCompatActivity {
+public class loginPage extends AppCompatActivity  implements GoogleApiClient.OnConnectionFailedListener {
     private Button move1,move2;
     TextInputEditText email,password;
     public static String PREFS_NAME="MyPrefsFile";
 
-    GoogleSignInOptions gso;
-    GoogleSignInClient gsc;
-    ImageView googleBtn;
+    ImageView signInButton;
+    private GoogleApiClient googleApiClient;
+    private static final  int SIGN_IN=1;
+
 
     private Context login;
     @Override
@@ -96,6 +103,19 @@ public class loginPage extends AppCompatActivity {
             }
         });
 
+        GoogleSignInOptions gso=new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+        googleApiClient=new GoogleApiClient.Builder(this).enableAutoManage(this,this)
+                .addApi(Auth.GOOGLE_SIGN_IN_API,gso).build();
+        signInButton=findViewById(R.id.googleSignIn);
+        signInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+                startActivityForResult(intent,SIGN_IN);
+            }
+        });
+
+
         move1=findViewById(R.id.sign_up);
         move1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,44 +125,28 @@ public class loginPage extends AppCompatActivity {
             }
         });
 
-    googleBtn = findViewById(R.id.google_btn);
-    gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
-    gsc = GoogleSignIn.getClient(this,gso);
-
-    googleBtn.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            signIn();
-        }
-    });
 
 
-    }
 
-    void signIn(){
-        Intent signInIntent = gsc.getSignInIntent();
-        startActivityForResult(signInIntent,1000);
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==1000){
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
-            try {
-                task.getResult(ApiException.class);
-                navigateToHomeFragment();
-            } catch (ApiException e) {
-                Toast.makeText(getApplicationContext(),""+e,Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==SIGN_IN){
+            GoogleSignInResult result=Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+            if (result.isSuccess()){
+                startActivity(new Intent(loginPage.this,MainActivity.class));
+                finish();
+            }
+            else {
+                Toast.makeText(this, "Login Failed!", Toast.LENGTH_SHORT).show();
             }
         }
     }
-
-    void navigateToHomeFragment(){
-        finish();
-        Intent intent = new Intent(loginPage.this,MainActivity.class);
-        startActivity(intent);
-    }
-
 }

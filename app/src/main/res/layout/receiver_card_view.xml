@@ -23,7 +23,7 @@
             android:layout_marginStart="10dp"
             android:layout_height="20dp"/>
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/receiver_name"
             android:layout_marginTop="25dp"
             android:layout_width="250dp"
             android:text="Nongmaithem Venker Singh"
@@ -42,7 +42,7 @@
         <TextView
             android:layout_marginTop="50dp"
             android:layout_width="50dp"
-            android:id="@+id/blood_group"
+            android:id="@+id/receiver_blood_group"
             android:text="B+"
             android:textColor="@color/white"
             android:textSize="16dp"
@@ -60,7 +60,7 @@
             android:layout_height="20dp"/>
         <TextView
             android:layout_marginTop="75dp"
-            android:id="@+id/phone_no"
+            android:id="@+id/receiver_phone_no"
             android:layout_width="100dp"
             android:text="8257994312"
             android:textColor="@color/white"
@@ -78,7 +78,7 @@
             android:layout_marginStart="10dp"
             android:layout_height="20dp"/>
         <TextView
-            android:id="@+id/address"
+            android:id="@+id/receiver_address"
             android:layout_marginTop="100dp"
             android:layout_width="280dp"
             android:text="Kakching Turel Wangma Mantop Pareng"

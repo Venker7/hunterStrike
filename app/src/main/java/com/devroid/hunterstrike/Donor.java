@@ -25,7 +25,7 @@ import retrofit2.Response;
 public class Donor extends AppCompatActivity {
     String[] type1 = {"A+","A-","B+","B-","AB+","AB-","0+","O-"};
     AutoCompleteTextView autoCompleteTextView;
-    String type2;
+    String donorbloodgroup;
     ArrayAdapter<String> adapterTypes;
 
     TextInputEditText donorName,donorAddress,donorNumber,donorMessage;
@@ -48,7 +48,7 @@ public class Donor extends AppCompatActivity {
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                type2 = adapterTypes.getItem(i).toString();
+                donorbloodgroup = adapterTypes.getItem(i).toString();
 
             }
         });
@@ -66,7 +66,7 @@ public class Donor extends AppCompatActivity {
     }
     public void createdonor(){
         String DName = donorName.getText().toString();
-        String DBloodGroup = type2;
+        String DBloodGroup = donorbloodgroup;
         String DNumber = donorNumber.getText().toString();
         String DAddress = donorAddress.getText().toString();
         String DMessage = donorMessage.getText().toString();

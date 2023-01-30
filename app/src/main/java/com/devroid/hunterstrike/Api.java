@@ -2,6 +2,8 @@ package com.devroid.hunterstrike;
 
 import com.devroid.hunterstrike.ModelResponse.FetchDonorUserResponse;
 import com.devroid.hunterstrike.ModelResponse.createDonorResponse;
+import com.devroid.hunterstrike.ModelResponse.createReceiverResponse;
+import com.devroid.hunterstrike.ModelResponse.fetchReceiveUserResponse;
 import com.devroid.hunterstrike.ModelResponse.loginResponse;
 import com.devroid.hunterstrike.ModelResponse.registerResponse;
 
@@ -40,4 +42,18 @@ public interface Api {
             @Field("number") String number,
             @Field("message") String message
     );
+    @GET("/home/displayreceiver")
+    Call<fetchReceiveUserResponse> fetchreceivers();
+    @FormUrlEncoded
+    @POST("/home/createreceiver")
+    Call<createReceiverResponse> createreceiver(
+            @Field("name") String name,
+            @Field("bloodgroup") String bloodgroup,
+            @Field("address") String address,
+            @Field("number") String number,
+            @Field("message") String message
+    );
+
+
+
 }

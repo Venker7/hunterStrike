@@ -141,6 +141,10 @@ public class loginPage extends AppCompatActivity  implements GoogleApiClient.OnC
         if(requestCode==SIGN_IN){
             GoogleSignInResult result=Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             if (result.isSuccess()){
+                SharedPreferences sharedPreferences = getSharedPreferences(loginPage.PREFS_NAME,0);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("hasLoggedIn",true);
+                editor.commit();
                 startActivity(new Intent(loginPage.this,MainActivity.class));
                 finish();
             }

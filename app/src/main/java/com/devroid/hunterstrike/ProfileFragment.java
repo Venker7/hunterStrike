@@ -53,7 +53,6 @@ Button edit;
        logout.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-
                Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(new ResultCallback<Status>() {
                    @Override
                    public void onResult(@NonNull Status status) {
@@ -128,8 +127,6 @@ Button edit;
             GoogleSignInAccount account=result.getSignInAccount();
             name.setText(account.getGivenName());
             email.setText(account.getEmail());
-        }else {
-            gotoLoginActivity();
         }
     }
 

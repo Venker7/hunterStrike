@@ -44,6 +44,7 @@ public class loginPage extends AppCompatActivity  implements GoogleApiClient.OnC
 
 
     private Context login;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,7 +91,7 @@ public class loginPage extends AppCompatActivity  implements GoogleApiClient.OnC
                             editor.putBoolean("hasLoggedIn",true);
                             editor.commit();
                             startActivity(new Intent(loginPage.this,MainActivity.class));
-                            Toast.makeText(loginPage.this, "hello gyus", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(loginPage.this, "hello guys", Toast.LENGTH_SHORT).show();
                             finish();
                         }
                     }
@@ -141,10 +142,8 @@ public class loginPage extends AppCompatActivity  implements GoogleApiClient.OnC
         if(requestCode==SIGN_IN){
             GoogleSignInResult result=Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             if (result.isSuccess()){
-                SharedPreferences sharedPreferences = getSharedPreferences(loginPage.PREFS_NAME,0);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean("hasLoggedIn",true);
-                editor.commit();
+//                editor.putBoolean("hasLoggedIn",true);
+//                editor.commit();
                 startActivity(new Intent(loginPage.this,MainActivity.class));
                 finish();
             }

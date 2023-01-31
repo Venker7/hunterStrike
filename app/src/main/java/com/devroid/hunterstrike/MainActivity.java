@@ -73,14 +73,6 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
-        gsc = GoogleSignIn.getClient(this,gso);
-
-        GoogleSignInAccount acct=GoogleSignIn.getLastSignedInAccount(this);
-        if(acct!=null){
-            String personName=acct.getDisplayName();
-            String personEmail=acct.getEmail();
-        }
     }
 
     private void replaceFragment(Fragment fragment) {

@@ -100,10 +100,10 @@ public class Registration extends AppCompatActivity {
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 finish();
-                Toast.makeText(Registration.this, registerResponse.getMsg(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(Registration.this, registerResponse.getSuccess(), Toast.LENGTH_SHORT).show();
             }
             else{
-                Toast.makeText(Registration.this, registerResponse.getMsg(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(Registration.this, registerResponse.getError(), Toast.LENGTH_SHORT).show();
             }
             }
 

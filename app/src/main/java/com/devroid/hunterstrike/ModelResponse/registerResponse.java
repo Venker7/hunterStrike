@@ -2,12 +2,28 @@ package com.devroid.hunterstrike.ModelResponse;
 
 
 public class registerResponse {
-    String error;
-    String message;
+    String status,success,error;
 
-    public registerResponse(String error, String msg) {
+    public registerResponse(String status, String success, String error) {
+        this.status = status;
+        this.success = success;
         this.error = error;
-        this.message = msg;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getSuccess() {
+        return success;
+    }
+
+    public void setSuccess(String success) {
+        this.success = success;
     }
 
     public String getError() {
@@ -16,13 +32,5 @@ public class registerResponse {
 
     public void setError(String error) {
         this.error = error;
-    }
-
-    public String getMsg() {
-        return message;
-    }
-
-    public void setMsg(String msg) {
-        this.message = msg;
     }
 }

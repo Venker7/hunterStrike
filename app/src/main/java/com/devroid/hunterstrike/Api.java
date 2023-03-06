@@ -2,7 +2,9 @@ package com.devroid.hunterstrike;
 
 import com.devroid.hunterstrike.ModelResponse.FetchDonorUserResponse;
 import com.devroid.hunterstrike.ModelResponse.createDonorResponse;
+import com.devroid.hunterstrike.ModelResponse.createEventResponse;
 import com.devroid.hunterstrike.ModelResponse.createReceiverResponse;
+import com.devroid.hunterstrike.ModelResponse.fetchEventResponse;
 import com.devroid.hunterstrike.ModelResponse.fetchReceiveUserResponse;
 import com.devroid.hunterstrike.ModelResponse.loginResponse;
 import com.devroid.hunterstrike.ModelResponse.registerResponse;
@@ -53,6 +55,15 @@ public interface Api {
             @Field("number") String number,
             @Field("message") String message
     );
+    @FormUrlEncoded
+    @POST("/home/createEvent")
+    Call<createEventResponse> createEvent(
+            @Field("event")  String event,
+            @Field("message")  String message
+    );
+
+    @GET("/home/dataEvent")
+    Call<fetchEventResponse> fetchEvents();
 
 
 

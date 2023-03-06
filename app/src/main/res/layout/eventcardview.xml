@@ -24,7 +24,7 @@
             android:layout_height="25dp"/>
 
         <TextView
-            android:id="@+id/topic"
+            android:id="@+id/eventtopic"
             android:layout_width="300dp"
             android:layout_height="25dp"
             android:layout_marginTop="25dp"
@@ -40,6 +40,7 @@
             android:layout_marginTop="60dp"
             android:layout_centerHorizontal="true"
             android:textSize="17sp"
+            android:id="@+id/eventMsg"
             android:textColor="@color/white"
             android:text="A blood donation camp will be held at Manipur Technical University around 10 am"
             android:textStyle="italic"

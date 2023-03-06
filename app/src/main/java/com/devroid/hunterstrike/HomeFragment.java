@@ -1,5 +1,6 @@
 package com.devroid.hunterstrike;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -20,15 +23,25 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.devroid.hunterstrike.ModelResponse.event;
+import com.devroid.hunterstrike.ModelResponse.fetchEventResponse;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+//importort com.google.android.gms.auth.api.signin.GoogleSignIn;
+//import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+//import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 
 
 public class HomeFragment extends Fragment {
 
 
-
+    RecyclerView recyclerView;
+    List<event> eventList;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -40,6 +53,35 @@ public class HomeFragment extends Fragment {
 
         return view;
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        recyclerView=view.findViewById(R.id.eventRecyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        Call<fetchEventResponse> call=retrofitClient.getInstance().getApi().fetchEvents();
+
+        call.enqueue(new Callback<fetchEventResponse>() {
+            @Override
+            public void onResponse(Call<fetchEventResponse> call, Response<fetchEventResponse> response) {
+                if(response.isSuccessful()){
+                    eventList=response.body().getUsers();
+                    recyclerView.setAdapter(new eventAdapter(eventList,getActivity()));
+                }
+                else{
+                    Toast.makeText(getActivity(), response.body().getStatus(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<fetchEventResponse> call, Throwable t) {
+
+            }
+        });
+    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
